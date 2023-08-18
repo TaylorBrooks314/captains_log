@@ -9,15 +9,19 @@ router.get('/logs', logsController.index)
 // "new" route
 router.get('/new', logsController.new)
 
-// "update" route
-// router.put('/:id', logsController.update)
-
 // "create" route
 router.post('/logs', logsController.create)
+
+// edit route
+router.get('/logs/:id/edit', logsController.edit)
 
 // "show" route
 router.get('/logs/:id', logsController.show)
 
+//delete route
 router.delete('/logs/:id', logsController.delete)
+
+// "update" route
+router.put('/logs/:id', logsController.update)
 
 module.exports = router

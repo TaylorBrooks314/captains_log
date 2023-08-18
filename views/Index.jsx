@@ -7,9 +7,12 @@ function Index({ logs }) {
       <ul>
         {logs.map((log) => (
           <li key={log._id}>
-            {log.title}
+            <a href={`/logs/${log._id}`}>{log.title}</a>
             <form action={`/logs/${log._id}?_method=DELETE`} method="POST">
               <button>Delete</button>
+            </form>
+            <form action={`/logs/${log._id}/edit`} method="GET">
+              <button>Edit</button>
             </form>
           </li>
         ))}
